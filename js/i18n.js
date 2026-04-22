@@ -12,7 +12,7 @@ const DAY_NAMES_SHORT = {
   bs: ['Pon', 'Uto', 'Sri', 'Čet', 'Pet', 'Sub', 'Ned']
 };
 
-let currentLang = localStorage.getItem('shiftplanner-lang') || 'en';
+let currentLang = localStorage.getItem('shiftplanner-lang') || 'bs';
 
 export async function loadLocale(lang) {
   if (!locales[lang]) {
