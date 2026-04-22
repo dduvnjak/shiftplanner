@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shift Calendar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="scanline"></div>
+
+  <div class="app-shell">
+    <header class="top-bar no-print">
+      <div class="top-bar-left">
+        <div class="logo-mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+            <line x1="9" y1="4" x2="9" y2="2"/>
+            <line x1="15" y1="4" x2="15" y2="2"/>
+          </svg>
+        </div>
+        <h1 data-i18n="title">Shift Calendar</h1>
+      </div>
+      <div class="top-bar-right">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="bs">BS</button>
+        </div>
+        <button id="printBtn" class="icon-btn" data-i18n-title="print" title="Print">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9V2h12v7"/>
+            <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
+            <rect x="6" y="14" width="12" height="8"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="config-panel no-print">
+      <div class="config-grid">
+        <div class="config-field">
+          <label data-i18n="workDays">Working days</label>
+          <div class="num-input-wrap">
+            <button class="num-btn num-dec" data-target="workDays">-</button>
+            <input type="number" id="workDays" min="1" max="60" value="4">
+            <button class="num-btn num-inc" data-target="workDays">+</button>
+          </div>
+        </div>
+
+        <div class="config-field">
+          <label data-i18n="offDays">Off days</label>
+          <div class="num-input-wrap">
+            <button class="num-btn num-dec" data-target="offDays">-</button>
+            <input type="number" id="offDays" min="0" max="60" value="4">
+            <button class="num-btn num-inc" data-target="offDays">+</button>
+          </div>
+        </div>
+
+        <div class="config-field">
+          <label data-i18n="startDate">First shift date</label>
+          <input type="date" id="startDate">
+        </div>
+
+        <div class="config-field">
+          <label data-i18n="shiftMode">Shift mode</label>
+          <div class="seg-control mode-selector">
+            <input type="radio" name="mode" id="modeAlt" value="alternating" checked>
+            <label for="modeAlt" data-i18n="alternating">Alternating</label>
+            <input type="radio" name="mode" id="modeDay" value="day">
+            <label for="modeDay" data-i18n="dayOnly">Day only</label>
+            <input type="radio" name="mode" id="modeNight" value="night">
+            <label for="modeNight" data-i18n="nightOnly">Night only</label>
+          </div>
+        </div>
+
+        <div class="config-field" id="firstShiftField">
+          <label data-i18n="firstShift">First shift type</label>
+          <div class="seg-control first-shift-toggle">
+            <input type="radio" name="firstShift" id="firstDay" value="day" checked>
+            <label for="firstDay">
+              <svg class="shift-icon-inline" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+              <span data-i18n="day">Day</span>
+            </label>
+            <input type="radio" name="firstShift" id="firstNight" value="night">
+            <label for="firstNight">
+              <svg class="shift-icon-inline" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+              <span data-i18n="night">Night</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calendar-container" id="calendar"></div>
+
+    <footer class="footer no-print">
+      <div class="legend">
+        <div class="legend-item">
+          <span class="legend-swatch swatch-day"></span>
+          <span data-i18n="day">Day</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch swatch-night"></span>
+          <span data-i18n="night">Night</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch swatch-off"></span>
+          <span>Off</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

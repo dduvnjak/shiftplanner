@@ -1,0 +1,15 @@
+{
+  "title": "Shift Calendar",
+  "workDays": "Working days",
+  "offDays": "Off days",
+  "startDate": "First shift date",
+  "firstShift": "First shift type",
+  "shiftMode": "Shift mode",
+  "day": "Day",
+  "night": "Night",
+  "dayOnly": "Day only",
+  "nightOnly": "Night only",
+  "alternating": "Alternating",
+  "print": "Print",
+  "language": "Language"
+}

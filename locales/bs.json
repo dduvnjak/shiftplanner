@@ -1,0 +1,15 @@
+{
+  "title": "Kalendar smjena",
+  "workDays": "Radni dani",
+  "offDays": "Slobodni dani",
+  "startDate": "Datum prve smjene",
+  "firstShift": "Tip prve smjene",
+  "shiftMode": "Režim smjena",
+  "day": "Dan",
+  "night": "Noć",
+  "dayOnly": "Samo dnevna",
+  "nightOnly": "Samo noćna",
+  "alternating": "Naizmjenično",
+  "print": "Štampaj",
+  "language": "Jezik"
+}
